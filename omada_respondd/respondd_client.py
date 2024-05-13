@@ -366,8 +366,7 @@ class ResponddClient:
 
     def sendUnicast(self):
         logger.info("Using unicast method")
-        timeSleep = 5
-        #timeSleep = int(60 - (self._timeStop - self._timeStart) % 60)
+        timeSleep = int(60 - (self._timeStop - self._timeStart) % 60)
         if self._config.verbose:
             logger.debug("will now sleep " + str(timeSleep) + " seconds")
         time.sleep(timeSleep)
