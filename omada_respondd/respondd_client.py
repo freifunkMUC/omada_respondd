@@ -126,6 +126,7 @@ class ClientInfo:
     wifi24: int
     wifi5: int
 
+
 @dataclasses.dataclass
 class WirelessInfo:
     """This class contains the Wireless information of an AP.
@@ -141,8 +142,9 @@ class WirelessInfo:
     # noise: int
     # active: int
     # busy: int
-    #rx: int
-    #tx: int
+    # rx: int
+    # tx: int
+
 
 @dataclasses.dataclass
 class MemoryInfo:
@@ -213,6 +215,7 @@ class StatisticsInfo:
     gateway_nexthop: str
     wireless: List[WirelessInfo]
 
+
 @dataclasses.dataclass
 class NeighbourDetails:
     tq: int
@@ -273,7 +276,7 @@ class ResponddClient:
                 NodeInfo(
                     software=SoftwareInfo(
                         firmware=FirmwareInfo(base="Omada", release=ap.firmware),
-                        autoupdater=ap.autoupdater
+                        autoupdater=ap.autoupdater,
                     ),
                     hostname=ap.name,
                     node_id=ap.mac.replace(":", ""),
@@ -441,9 +444,9 @@ class ResponddClient:
             str(destAddress[0]) + " " + str(destAddress[1]) + " " + str(responseStruct)
         )
         merged = self.merge_node(responseStruct)
-        
+
         for infos in merged.values():
-            
+
             node = {}
             for key, info in infos.items():
                 node.update({key: info.to_dict()})
