@@ -61,7 +61,7 @@ class SoftwareInfo:
         firmware: The firmware information of the AP."""
 
     firmware: FirmwareInfo
-    autoupdater: bool
+    autoupdater: str
 
 
 @dataclasses.dataclass
