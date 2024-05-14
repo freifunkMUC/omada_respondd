@@ -61,7 +61,7 @@ class SoftwareInfo:
         firmware: The firmware information of the AP."""
 
     firmware: FirmwareInfo
-    #autoupdater: str
+    # autoupdater: str
 
 
 @dataclasses.dataclass
@@ -276,7 +276,7 @@ class ResponddClient:
                 NodeInfo(
                     software=SoftwareInfo(
                         firmware=FirmwareInfo(base="Omada", release=ap.firmware),
-                        #autoupdater=ap.autoupdater,
+                        # autoupdater=ap.autoupdater,
                     ),
                     hostname=ap.name,
                     node_id=ap.mac.replace(":", ""),
