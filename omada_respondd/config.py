@@ -47,7 +47,6 @@ class Config:
 
     ssl_verify: bool = True
 
-
     @classmethod
     def from_dict(cls, cfg: Dict[str, str]) -> "Config":
         """Creates a Config object from a configuration file.
