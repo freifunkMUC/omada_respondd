@@ -45,6 +45,7 @@ class Config:
     multicast_enabled: bool = True
 
     ssl_verify: bool = True
+    fallback_domain: str
 
     @classmethod
     def from_dict(cls, cfg: Dict[str, str]) -> "Config":
