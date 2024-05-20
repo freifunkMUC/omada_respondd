@@ -41,11 +41,12 @@ class Config:
     unicast_address: str
     unicast_port: int
     interface: str
+    fallback_domain: str
     verbose: bool = False
     multicast_enabled: bool = True
 
     ssl_verify: bool = True
-    fallback_domain: str
+
 
     @classmethod
     def from_dict(cls, cfg: Dict[str, str]) -> "Config":
