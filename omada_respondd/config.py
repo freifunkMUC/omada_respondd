@@ -71,6 +71,7 @@ class Config:
             unicast_port=cfg["unicast_port"],
             interface=cfg["interface"],
             verbose=cfg["verbose"],
+            fallback_domain=cfg.get("fallback_domain", "omada_respondd_fallback"),
         )
 
 
