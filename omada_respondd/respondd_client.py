@@ -297,9 +297,9 @@ class ResponddClient:
     def getStatistics(self):
         """This method returns the statistics information of all APs."""
         aps = self._aps
-        statistics = []
+        statistics: List[StatisticsInfo] = []
         for ap in aps.accesspoints:
-            wirelessinfos = []
+            wirelessinfos: List[WirelessInfo] = []
 
             if ap.frequency24:
                 wirelessinfos.append(
