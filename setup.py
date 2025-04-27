@@ -22,6 +22,6 @@ setup(
     install_requires=[
         "geopy==2.2.0",
         "pyyaml==6.0.2",
-        "dataclasses_json==0.5.6",
+        "dataclasses_json==0.6.7",
     ],
 )
