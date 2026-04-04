@@ -299,6 +299,10 @@ class ResponddClient:
         aps = self._aps
         statistics: List[StatisticsInfo] = []
         for ap in aps.accesspoints:
+            mem_total = max(int(ap.mem_total), 1024)
+            mem_used = min(max(int(ap.mem_used), 0), mem_total)
+            mem_buffer = max(int(ap.mem_buffer), 0)
+
             wirelessinfos: List[WirelessInfo] = []
 
             if ap.frequency24:
@@ -327,9 +331,9 @@ class ResponddClient:
                     node_id=ap.mac.replace(":", ""),
                     loadavg=ap.load_avg,
                     memory=MemoryInfo(
-                        total=int(ap.mem_total / 1024),
-                        free=int((ap.mem_total - ap.mem_used) / 1024),
-                        buffers=int(ap.mem_buffer / 1024),
+                        total=int(mem_total / 1024),
+                        free=int((mem_total - mem_used) / 1024),
+                        buffers=int(mem_buffer / 1024),
                     ),
                     traffic=TrafficInfo(
                         tx=txInfo(bytes=int(ap.tx_bytes)),
