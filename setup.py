@@ -20,7 +20,7 @@ setup(
     long_description_content_type="text/markdown",
     include_package_data=True,
     install_requires=[
-        "geopy==2.4.1",
+        "geopy==2.5.0",
         "pyyaml==6.0.3",
         "dataclasses_json==0.6.7",
     ],
