@@ -1,8 +1,20 @@
 # omada_respondd
 
-This queries the API of a Omada controller to get the current status of the Accesspoints and sends the information via the respondd protocol. Thus it can be picked up by `yanic` and other respondd queriers.
+> [!IMPORTANT]
+> **This project has moved.** omada_respondd is now the `omada` backend of [unified_respondd](https://github.com/freifunkMUC/unified_respondd), together with the former unifi_respondd and uisp_respondd. This repository is archived and no longer maintained.
+
+## Migrating
+
+1. Install the new package: `pip install 'unified_respondd[omada]'`
+2. Add `backend: omada` to your config. The port is part of `controller_url`, `controller_port` is no longer used.
+3. Point `UNIFIED_RESPONDD_CONFIG_FILE` to your config (or rename it to `unified_respondd.yaml`) and run `unified-respondd`.
+
+Check the output with `unified-respondd --dry-run` before switching. The [migration guide](https://github.com/freifunkMUC/unified_respondd#from-omada_respondd) lists the behaviour changes.
+
 
 ## Overview
+
+This queries the API of a Omada controller to get the current status of the Accesspoints and sends the information via the respondd protocol. Thus it can be picked up by `yanic` and other respondd queriers.
 
 ```mermaid
 graph TD;
